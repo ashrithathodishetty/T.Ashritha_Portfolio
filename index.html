@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,6 +11,22 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <svg class="svg-sprite" aria-hidden="true" focusable="false">
+      <symbol id="icon-github-brand" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.11.79-.25.79-.56v-2.16c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .98-.31 3.18 1.18.92-.26 1.91-.38 2.89-.39.98.01 1.97.13 2.89.39 2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.26 5.68.42.36.79 1.08.79 2.18v3.22c0 .31.21.68.8.56A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"
+        />
+      </symbol>
+      <symbol id="icon-linkedin-brand" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.61 0 4.27 2.37 4.27 5.46v6.28ZM5.33 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12Zm1.78 13.02H3.55V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0Z"
+        />
+      </symbol>
+    </svg>
+
     <header class="site-header">
       <a class="brand" href="#home" aria-label="Ashritha portfolio home">
         <span>Thodishetty Ashritha</span>
@@ -27,8 +42,13 @@
         <a href="#contact">Contact</a>
       </nav>
 
+      <a class="nav-cta" href="mailto:ashrithathodishetty@gmail.com">
+        <i data-lucide="send" aria-hidden="true"></i>
+        Let's Connect
+      </a>
+
       <button class="theme-toggle" type="button" aria-label="Toggle color theme">
-        <span class="theme-icon" aria-hidden="true">D</span>
+        <i class="theme-icon" data-lucide="moon" aria-hidden="true"></i>
       </button>
     </header>
 
@@ -41,11 +61,21 @@
             Frontend and full-stack developer crafting responsive interfaces,
             useful APIs, AI/RAG pipelines, and polished digital experiences.
           </p>
+          <p class="role-line">
+            React Developer | Python Programmer | AI/RAG Explorer
+          </p>
 
           <div class="hero-actions" aria-label="Portfolio actions">
-            <a class="btn primary" href="#projects">View Projects</a>
-            <a class="btn secondary" href="Ashritha-Resume.pdf" target="_blank" rel="noreferrer">View Resume</a>
-            <a class="btn secondary" href="Ashritha-Resume.pdf" download>Download Resume</a>
+            <a class="btn primary" href="#projects"><i data-lucide="briefcase-business" aria-hidden="true"></i>View Projects</a>
+            <a class="btn secondary" href="ASHRITHA Resume.pdf" target="_blank" rel="noreferrer"><i data-lucide="file-text" aria-hidden="true"></i>View Resume</a>
+            <a class="btn secondary" href="ASHRITHA Resume.pdf" download><i data-lucide="download" aria-hidden="true"></i>Download Resume</a>
+          </div>
+
+          <div class="social-row" aria-label="Profile links">
+            <a href="mailto:ashrithathodishetty@gmail.com" aria-label="Email"><i data-lucide="mail" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/ashritha-thodishetty-4719b9351" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg class="brand-svg" aria-hidden="true"><use href="#icon-linkedin-brand"></use></svg></a>
+            <a href="https://github.com/ashrithathodishetty" target="_blank" rel="noreferrer" aria-label="GitHub"><svg class="brand-svg" aria-hidden="true"><use href="#icon-github-brand"></use></svg></a>
+            <a href="https://leetcode.com/u/ThodishettyAshritha/" target="_blank" rel="noreferrer" aria-label="LeetCode"><i data-lucide="code-2" aria-hidden="true"></i></a>
           </div>
 
           <div class="hero-tags" aria-label="Key skills">
@@ -86,14 +116,22 @@
               </article>
             </div>
           </div>
+          <div class="recruiter-card">
+            <p class="profile-label">Recruiter Snapshot</p>
+            <ul>
+              <li><i data-lucide="check-circle-2" aria-hidden="true"></i>Strong academic record with 9.53 CGPA</li>
+              <li><i data-lucide="check-circle-2" aria-hidden="true"></i>Hands-on React, Node.js, Python, and AI/RAG projects</li>
+              <li><i data-lucide="check-circle-2" aria-hidden="true"></i>Ready for frontend, full-stack, and software roles</li>
+            </ul>
+          </div>
         </div>
       </section>
 
       <section class="quick-strip section-shell" aria-label="Portfolio highlights">
-        <article><strong>Frontend</strong><span>React, JavaScript, responsive UI</span></article>
-        <article><strong>Backend</strong><span>Node.js, Express.js, REST APIs</span></article>
-        <article><strong>AI/RAG</strong><span>Embeddings, vector search, reranking</span></article>
-        <article><strong>Cloud</strong><span>Azure services and deployment basics</span></article>
+        <article><i data-lucide="layout-dashboard" aria-hidden="true"></i><strong>Frontend</strong><span>React, JavaScript, responsive UI</span></article>
+        <article><i data-lucide="server" aria-hidden="true"></i><strong>Backend</strong><span>Node.js, Express.js, REST APIs</span></article>
+        <article><i data-lucide="brain-circuit" aria-hidden="true"></i><strong>AI/RAG</strong><span>Embeddings, vector search, reranking</span></article>
+        <article><i data-lucide="cloud" aria-hidden="true"></i><strong>Cloud</strong><span>Azure services and deployment basics</span></article>
       </section>
 
       <section class="section-shell about-grid" id="about">
@@ -113,6 +151,30 @@
             entry-level software developer, frontend developer, full-stack developer,
             and internship opportunities.
           </p>
+        </div>
+      </section>
+
+      <section class="section-shell value-section" aria-label="What I bring">
+        <div class="section-heading">
+          <p class="eyebrow">Strengths</p>
+          <h2 class="section-title">What I Bring</h2>
+        </div>
+        <div class="value-grid">
+          <article>
+            <i data-lucide="monitor-smartphone" aria-hidden="true"></i>
+            <h3>Responsive Frontend</h3>
+            <p>Clean layouts, polished UI components, and mobile-first pages that feel smooth across devices.</p>
+          </article>
+          <article>
+            <i data-lucide="workflow" aria-hidden="true"></i>
+            <h3>Full-Stack Thinking</h3>
+            <p>Comfortable connecting React interfaces with APIs, authentication flow, data handling, and Git workflow.</p>
+          </article>
+          <article>
+            <i data-lucide="scan-search" aria-hidden="true"></i>
+            <h3>AI/RAG Curiosity</h3>
+            <p>Experience with embeddings, vector search, PDF ingestion, reranking, and retrieval evaluation.</p>
+          </article>
         </div>
       </section>
 
@@ -183,12 +245,16 @@
                 Built a responsive shopping platform with authentication, product
                 listing, search/filter, cart, checkout, REST APIs, and admin dashboard.
               </p>
+              <ul class="impact-list">
+                <li>Secure login flow with JWT authentication</li>
+                <li>Admin dashboard for product and order management</li>
+              </ul>
               <div class="chip-list">
                 <span>React</span><span>Node.js</span><span>Express</span><span>JWT</span><span>REST APIs</span>
               </div>
               <div class="project-links">
-                <a href="https://github.com/ashrithathodishetty" target="_blank" rel="noreferrer">GitHub Profile</a>
-                <span>Case study ready</span>
+                <a href="https://github.com/ashrithathodishetty" target="_blank" rel="noreferrer"><svg class="brand-svg" aria-hidden="true"><use href="#icon-github-brand"></use></svg>GitHub</a>
+                <span><i data-lucide="sparkles" aria-hidden="true"></i>Case study ready</span>
               </div>
             </div>
           </article>
@@ -203,12 +269,16 @@
                 Framer Motion micro-animations, service timeline, reviews, and
                 WhatsApp appointment routing.
               </p>
+              <ul class="impact-list">
+                <li>Mobile-first commercial landing experience</li>
+                <li>Appointment funnel routed to WhatsApp Business</li>
+              </ul>
               <div class="chip-list">
                 <span>React</span><span>Framer Motion</span><span>Context API</span><span>CSS3</span>
               </div>
               <div class="project-links">
-                <a href="https://github.com/ashrithathodishetty" target="_blank" rel="noreferrer">GitHub Profile</a>
-                <span>Live project</span>
+                <a href="https://github.com/ashrithathodishetty" target="_blank" rel="noreferrer"><svg class="brand-svg" aria-hidden="true"><use href="#icon-github-brand"></use></svg>GitHub</a>
+                <span><i data-lucide="radio" aria-hidden="true"></i>Live project</span>
               </div>
             </div>
           </article>
@@ -222,12 +292,16 @@
                 Created a full-stack prediction system with React UI, Node APIs,
                 form validation, and a KNN model achieving about 85% accuracy.
               </p>
+              <ul class="impact-list">
+                <li>Interactive health-risk form with validation</li>
+                <li>ML prediction flow connected to web UI</li>
+              </ul>
               <div class="chip-list">
                 <span>React</span><span>KNN</span><span>Node.js</span><span>Form Validation</span>
               </div>
               <div class="project-links">
-                <a href="https://github.com/ashrithathodishetty" target="_blank" rel="noreferrer">GitHub Profile</a>
-                <span>ML integrated</span>
+                <a href="https://github.com/ashrithathodishetty" target="_blank" rel="noreferrer"><svg class="brand-svg" aria-hidden="true"><use href="#icon-github-brand"></use></svg>GitHub</a>
+                <span><i data-lucide="activity" aria-hidden="true"></i>ML integrated</span>
               </div>
             </div>
           </article>
@@ -241,12 +315,16 @@
                 Implemented SHA-256 based packet verification, optimized latency,
                 secure key management, and a scalable cloud-ready architecture.
               </p>
+              <ul class="impact-list">
+                <li>Secure packet verification using hashing</li>
+                <li>Explored tamper-proof verification design</li>
+              </ul>
               <div class="chip-list">
                 <span>SHA-256</span><span>Cloud</span><span>Security</span><span>Blockchain Concept</span>
               </div>
               <div class="project-links">
-                <a href="https://github.com/ashrithathodishetty" target="_blank" rel="noreferrer">GitHub Profile</a>
-                <span>Security focused</span>
+                <a href="https://github.com/ashrithathodishetty" target="_blank" rel="noreferrer"><svg class="brand-svg" aria-hidden="true"><use href="#icon-github-brand"></use></svg>GitHub</a>
+                <span><i data-lucide="shield-check" aria-hidden="true"></i>Security focused</span>
               </div>
             </div>
           </article>
@@ -261,12 +339,16 @@
                 FastAPI, ChromaDB, Sentence Transformers, page metadata, chunking,
                 CrossEncoder reranking, and retrieval metrics.
               </p>
+              <ul class="impact-list">
+                <li>Framework-free semantic retrieval architecture</li>
+                <li>Top-K Accuracy and MRR evaluation dashboard</li>
+              </ul>
               <div class="chip-list">
                 <span>Python</span><span>FastAPI</span><span>ChromaDB</span><span>PyMuPDF</span><span>Reranking</span>
               </div>
               <div class="project-links">
-                <a href="https://github.com/ashrithathodishetty" target="_blank" rel="noreferrer">GitHub Profile</a>
-                <span>AI/RAG highlight</span>
+                <a href="https://github.com/ashrithathodishetty" target="_blank" rel="noreferrer"><svg class="brand-svg" aria-hidden="true"><use href="#icon-github-brand"></use></svg>GitHub</a>
+                <span><i data-lucide="brain-circuit" aria-hidden="true"></i>AI/RAG highlight</span>
               </div>
             </div>
           </article>
@@ -305,21 +387,21 @@
             <p class="timeline-date">2022 - 2026</p>
             <h3>B.Tech in Computer Science and Engineering</h3>
             <p>Sridevi Women's Engineering College, Hyderabad</p>
-            <strong>CGPA: 9.53/10</strong>
+            <strong>CGPA: 9.53</strong>
           </article>
           <article class="timeline-item">
             <span class="timeline-dot"></span>
             <p class="timeline-date">2020 - 2022</p>
             <h3>Senior Secondary</h3>
             <p>Sri Chaitanya Junior College, Hyderabad</p>
-            <strong>Percentage: 96.9%</strong>
+            <strong>Percentage: 96.9</strong>
           </article>
           <article class="timeline-item">
             <span class="timeline-dot"></span>
             <p class="timeline-date">2019 - 2020</p>
             <h3>Secondary Education</h3>
             <p>ST. Thomas High School</p>
-            <strong>CGPA: 10/10</strong>
+            <strong>CGPA: 10</strong>
           </article>
         </div>
       </section>
@@ -347,8 +429,8 @@
           </p>
         </div>
         <div class="resume-actions">
-          <a class="btn primary" href="Ashritha Resume.pdf" target="_blank" rel="noreferrer">View Resume</a>
-          <a class="btn secondary" href="Ashritha Resume.pdf" download>Download Resume</a>
+          <a class="btn primary" href="ASHRITHA Resume.pdf" target="_blank" rel="noreferrer"><i data-lucide="file-text" aria-hidden="true"></i>View Resume</a>
+          <a class="btn secondary" href="ASHRITHA Resume.pdf" download><i data-lucide="download" aria-hidden="true"></i>Download Resume</a>
         </div>
       </section>
 
@@ -362,22 +444,22 @@
           </p>
         </div>
         <div class="contact-card">
-          <a href="mailto:ashrithathodishetty@gmail.com">ashrithathodishetty@gmail.com</a>
-          <a href="tel:+919652407989">+91 96524 07989</a>
-          <a href="https://www.linkedin.com/in/ashritha-thodishetty-4719b9351" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="https://github.com/ashrithathodishetty" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://leetcode.com/u/ThodishettyAshritha/" target="_blank" rel="noreferrer">LeetCode</a>
-          <span>Hyderabad, Telangana, India</span>
+          <a href="mailto:ashrithathodishetty@gmail.com"><i data-lucide="mail" aria-hidden="true"></i>ashrithathodishetty@gmail.com</a>
+          <a href="tel:+919652407989"><i data-lucide="phone" aria-hidden="true"></i>+91 96524 07989</a>
+          <a href="https://www.linkedin.com/in/ashritha-thodishetty-4719b9351" target="_blank" rel="noreferrer"><svg class="brand-svg" aria-hidden="true"><use href="#icon-linkedin-brand"></use></svg>LinkedIn</a>
+          <a href="https://github.com/ashrithathodishetty" target="_blank" rel="noreferrer"><svg class="brand-svg" aria-hidden="true"><use href="#icon-github-brand"></use></svg>GitHub</a>
+          <a href="https://leetcode.com/u/ThodishettyAshritha/" target="_blank" rel="noreferrer"><i data-lucide="code-2" aria-hidden="true"></i>LeetCode</a>
+          <span><i data-lucide="map-pin" aria-hidden="true"></i>Hyderabad, Telangana, India</span>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>Designed and developed by Thodishetty Ashritha.</p>
-      <a href="#home">Back to top</a>
+      <p>Designed and developed by Thodishetty Ashritha's</p>
+      <a href="#home"><i data-lucide="arrow-up" aria-hidden="true"></i>Back to top</a>
     </footer>
 
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="script.js"></script>
   </body>
 </html>
-

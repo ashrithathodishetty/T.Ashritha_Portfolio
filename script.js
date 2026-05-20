@@ -1,12 +1,15 @@
 const themeToggle = document.querySelector(".theme-toggle");
 const themeIcon = document.querySelector(".theme-icon");
+const scrollProgress = document.querySelector(".scroll-progress");
+
 const navLinks = [...document.querySelectorAll(".nav-links a")];
+
 const sections = navLinks
   .map((link) => document.querySelector(link.getAttribute("href")))
   .filter(Boolean);
 
 const revealItems = document.querySelectorAll(
-  ".profile-card, .quick-strip article, .about-content, .skill-card, .project-card, .timeline-item, .cert-grid article, .contact-card" +
+  ".profile-card, .recruiter-card, .quick-strip article, .about-content, .value-grid article, .skill-card, .project-card, .timeline-item, .cert-grid article, .contact-card" +
     ", .resume-section"
 );
 
@@ -14,7 +17,7 @@ const savedTheme = localStorage.getItem("portfolio-theme");
 
 if (savedTheme === "light") {
   document.body.classList.add("light-theme");
-  themeIcon.textContent = "L";
+  themeIcon.setAttribute("data-lucide", "sun");
 }
 
 themeToggle.addEventListener("click", () => {
@@ -22,8 +25,12 @@ themeToggle.addEventListener("click", () => {
 
   const isLight = document.body.classList.contains("light-theme");
 
-  themeIcon.textContent = isLight ? "L" : "D";
+  themeIcon.setAttribute("data-lucide", isLight ? "sun" : "moon");
   localStorage.setItem("portfolio-theme", isLight ? "light" : "dark");
+
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
 });
 
 const observer = new IntersectionObserver(
@@ -61,3 +68,22 @@ revealItems.forEach((item, index) => {
   item.style.setProperty("--reveal-delay", `${Math.min(index * 45, 300)}ms`);
   revealObserver.observe(item);
 });
+
+const updateScrollProgress = () => {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+
+  scrollProgress.style.setProperty(
+    "--scroll-progress",
+    `${Math.min(progress, 100)}%`
+  );
+};
+
+window.addEventListener("scroll", updateScrollProgress, { passive: true });
+window.addEventListener("resize", updateScrollProgress);
+
+updateScrollProgress();
+
+if (window.lucide) {
+  window.lucide.createIcons();
+}
