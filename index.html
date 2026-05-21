@@ -11,6 +11,27 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-trail" aria-hidden="true"></div>
+    <div class="intro-loader" aria-hidden="true">
+      <canvas class="intro-canvas"></canvas>
+      <div class="loader-card">
+        <span>Interactive Portfolio</span>
+        <strong>Thodishetty Ashritha</strong>
+        <p>Explore my work, skills, and developer journey.</p>
+        <button class="start-journey" type="button">
+          <i data-lucide="sparkles" aria-hidden="true"></i>
+          Enter Portfolio
+        </button>
+        <div class="control-hints">
+          <span>Interactive intro</span>
+          <span>Press Enter</span>
+          <span>Scroll to explore</span>
+        </div>
+      </div>
+    </div>
+
     <div class="scroll-progress" aria-hidden="true"></div>
     <svg class="svg-sprite" aria-hidden="true" focusable="false">
       <symbol id="icon-github-brand" viewBox="0 0 24 24">
@@ -47,6 +68,10 @@
         Let's Connect
       </a>
 
+      <button class="command-trigger" type="button" aria-label="Open quick actions">
+        <i data-lucide="command" aria-hidden="true"></i>
+      </button>
+
       <button class="theme-toggle" type="button" aria-label="Toggle color theme">
         <i class="theme-icon" data-lucide="moon" aria-hidden="true"></i>
       </button>
@@ -61,9 +86,14 @@
             Frontend and full-stack developer crafting responsive interfaces,
             useful APIs, AI/RAG pipelines, and polished digital experiences.
           </p>
-          <p class="role-line">
+          <p class="role-line" data-typing-text>
             React Developer | Python Programmer | AI/RAG Explorer
           </p>
+          <div class="portfolio-badges" aria-label="Portfolio highlights">
+            <span><i data-lucide="award" aria-hidden="true"></i>Recruiter Ready</span>
+            <span><i data-lucide="sparkles" aria-hidden="true"></i>Interactive UI</span>
+            <span><i data-lucide="rocket" aria-hidden="true"></i>Project Focused</span>
+          </div>
 
           <div class="hero-actions" aria-label="Portfolio actions">
             <a class="btn primary" href="#projects"><i data-lucide="briefcase-business" aria-hidden="true"></i>View Projects</a>
@@ -134,6 +164,24 @@
         <article><i data-lucide="cloud" aria-hidden="true"></i><strong>Cloud</strong><span>Azure services and deployment basics</span></article>
       </section>
 
+      <section class="section-shell studio-strip" aria-label="Portfolio interface features">
+        <article>
+          <span>01</span>
+          <strong>Animated Intro</strong>
+          <p>Interactive canvas opening with smooth entry into the portfolio.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <strong>Quick Actions</strong>
+          <p>Use the command button or press slash to jump through the page.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <strong>Advanced Hover</strong>
+          <p>Cards respond with tilt, spotlight, and magnetic pointer motion.</p>
+        </article>
+      </section>
+
       <section class="section-shell about-grid" id="about">
         <div>
           <p class="eyebrow">About Me</p>
@@ -151,30 +199,6 @@
             entry-level software developer, frontend developer, full-stack developer,
             and internship opportunities.
           </p>
-        </div>
-      </section>
-
-      <section class="section-shell value-section" aria-label="What I bring">
-        <div class="section-heading">
-          <p class="eyebrow">Strengths</p>
-          <h2 class="section-title">What I Bring</h2>
-        </div>
-        <div class="value-grid">
-          <article>
-            <i data-lucide="monitor-smartphone" aria-hidden="true"></i>
-            <h3>Responsive Frontend</h3>
-            <p>Clean layouts, polished UI components, and mobile-first pages that feel smooth across devices.</p>
-          </article>
-          <article>
-            <i data-lucide="workflow" aria-hidden="true"></i>
-            <h3>Full-Stack Thinking</h3>
-            <p>Comfortable connecting React interfaces with APIs, authentication flow, data handling, and Git workflow.</p>
-          </article>
-          <article>
-            <i data-lucide="scan-search" aria-hidden="true"></i>
-            <h3>AI/RAG Curiosity</h3>
-            <p>Experience with embeddings, vector search, PDF ingestion, reranking, and retrieval evaluation.</p>
-          </article>
         </div>
       </section>
 
@@ -387,21 +411,21 @@
             <p class="timeline-date">2022 - 2026</p>
             <h3>B.Tech in Computer Science and Engineering</h3>
             <p>Sridevi Women's Engineering College, Hyderabad</p>
-            <strong>CGPA: 9.53</strong>
+            <strong>CGPA: 9.53/10</strong>
           </article>
           <article class="timeline-item">
             <span class="timeline-dot"></span>
             <p class="timeline-date">2020 - 2022</p>
             <h3>Senior Secondary</h3>
             <p>Sri Chaitanya Junior College, Hyderabad</p>
-            <strong>Percentage: 96.9</strong>
+            <strong>Percentage: 96.9%</strong>
           </article>
           <article class="timeline-item">
             <span class="timeline-dot"></span>
             <p class="timeline-date">2019 - 2020</p>
             <h3>Secondary Education</h3>
             <p>ST. Thomas High School</p>
-            <strong>CGPA: 10</strong>
+            <strong>CGPA: 10/10</strong>
           </article>
         </div>
       </section>
@@ -455,11 +479,32 @@
     </main>
 
     <footer class="site-footer">
-      <p>Designed and developed by Thodishetty Ashritha's</p>
+      <p>Designed and developed by Thodishetty Ashritha.</p>
       <a href="#home"><i data-lucide="arrow-up" aria-hidden="true"></i>Back to top</a>
     </footer>
+
+    <div class="command-palette" aria-hidden="true">
+      <div class="command-panel" role="dialog" aria-modal="true" aria-label="Quick actions">
+        <div class="command-header">
+          <div>
+            <span>Quick Actions</span>
+            <strong>Where do you want to go?</strong>
+          </div>
+          <button class="command-close" type="button" aria-label="Close quick actions">
+            <i data-lucide="x" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="command-list">
+          <a href="#projects"><i data-lucide="briefcase-business" aria-hidden="true"></i>View Projects</a>
+          <a href="#skills"><i data-lucide="sparkles" aria-hidden="true"></i>Explore Skills</a>
+          <a href="#resume"><i data-lucide="file-text" aria-hidden="true"></i>Open Resume</a>
+          <a href="#contact"><i data-lucide="mail" aria-hidden="true"></i>Contact Me</a>
+        </div>
+      </div>
+    </div>
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="script.js"></script>
   </body>
 </html>
+
